@@ -1,29 +1,11 @@
-console.log("Flashcard Module Connected!");
-//CONSTRUCTOR FUNCTION used to create flashcard objects NOT CERTAIN ABOUT SYNTAX
-module.exports = function BasicFlashcard() {
-    this.front = '';
-    this.back = '';
-    //METHOD 
-    this.action = function () {
-        if (this.front === 'George Washington') {
-            console.log("Wow, George");
-        } else {
-            console.log("Bad Try.");
-        }
-    };
-};
-var BasicFlashcard = function (phrase, answer) {
-    BasicFlashcard.cardCount++;
-    this.p = phrase;
+console.log("Complete Flashcard Constructor Module!");
+//CONSTRUCTOR FUNCTION used to create flashcard objects for complete Q and A
+var CompleteFlashcard = function (question, answer) {
+    //increments through the items added to the complete flashcard array
+    CompleteFlashcard.cardCount++;
+    //phrase would return the blank portion on the text
+    this.q = question;
     this.a = answer;
-    this.ind = BasicFlashcard.cardCount;
-    this.response = function (res) {
-        if (res.toLowerCase() === this.a.toLowerCase()) {
-            console.log("Your response is correct!");
-        } else {
-            console.log("Wrong Answer!");
-        }
-    }
-}
-BasicFlashcard.cardCount = 0;
-module exports = BasicFlashcard;
+    this.ind = CompleteFlashcard.cardCount;
+};
+module.exports = CompleteFlashcard;
